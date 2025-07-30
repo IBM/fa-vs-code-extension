@@ -7,6 +7,9 @@ When applications abnormally end (ABEND) it is crucial to understand the root-ca
 IBM Fault Analyzer for z/OS&reg; can discover ABENDs faster, more confidently, and in less time
 by automatically harvesting real-time information of the ABEND and its environment at the time of failure.
 
+**Simplify your installation experience by using newly bundled extension packs that contain IBM Fault Analyzer for z/OS
+as well as other extensions available for [ADFz][link-ext-pack] customers.**
+
 ## General requirements
 
 - Assumes knowledge of IBM Fault Analyzer for z/OS&reg; product [installation][link-fa-install] and [features][link-features]
@@ -19,7 +22,7 @@ by automatically harvesting real-time information of the ABEND and its environme
 ## VS Code extension requirements
 
 - [VS Code][link-vscode] `1.90.0`+
-- [Zowe Explorer][link-zowe] `2.17.0`+
+- [Zowe Explorer][link-zowe] `3.1.0`+
   - Assumes that the user has knowledge of the Zowe Explorer extension before using the IBM Fault Analyzer extension
 
 ## Optional VS Code extensions
@@ -39,8 +42,9 @@ Note that while `15.1.x` host builds might work, they are **not** officially sup
 
 ### Supported charsets
 
-The extension currently supports data exchange only with the SBCS encodings `IBM037` and `IBM1047`.  
-Support for additional charsets is planned for future releases.
+The extension supports resources in both English (`IBM1047`) and Japanese (`IBM939`).
+
+Use the **IBM Fault Analyzer** > **Language** setting to configure the global resource language.
 
 ## Features
 
@@ -71,13 +75,12 @@ Itemized below are the features supported and not supported in broad terms.
 
 ### ADFz Common Component server connections
 
-- Associate an ADFz port with a Zowe Profile
-- Remove the association between an ADFz port and a Zowe profile
+- Associate an ADFzCC port with a Zowe Profile
+- Remove the association between an ADFzCC port and a Zowe profile
 
 ## Unsupported features
 
-- Multi-Factor Authentication (MFA)
-- Trust manager for certificates used when connecting to the ADFz Common Component server
+- Trust manager for certificates used when connecting to the ADFzCC server
 
 ### History files
 
@@ -111,7 +114,7 @@ Itemized below are the features supported and not supported in broad terms.
 
 # Getting started
 
-## Specifying the ADFz connection port
+## Specifying the ADFzCC connection port
 
 Before you begin, all the above requirements must be fulfilled.
 
@@ -214,7 +217,7 @@ you will be able to view the fault report in multiple ways.
 
 ![Open report from JESMSGLG context menu](./docs/images/open-fr-context.gif)
 
-## Fault Analyzer VS Code commands
+## Fault Analyzer commands
 
 The Fault Analyzer extension adds new commands to the VS Code Command Palette.
 
@@ -261,3 +264,4 @@ The layout is similar to the Fault Reports view in the IBM Fault Analyzer Eclips
 [link-adfz-config]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/index.html
 [link-adfz-customize]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/svrauth.html
 [link-adfz-attls]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/attls.html
+[link-ext-pack]: https://marketplace.visualstudio.com/items?itemName=IBM.application-delivery-foundation-for-zos-vscode-extension-pack
