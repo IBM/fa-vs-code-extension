@@ -14,10 +14,9 @@ as well as other extensions available for [ADFz][link-ext-pack] customers.**
 
 - Assumes knowledge of IBM Fault Analyzer for z/OS&reg; product [installation][link-fa-install] and [features][link-features]
 - The Fault Analyzer VS Code extension connectivity to the Fault Analyzer host is similar to using
-  the Application Delivery Foundation for z/OS&reg; common component (ADFzCC) server
-  - Assumes knowledge of how to [install][link-adfz-install] and [configure][link-adfz-config]
-    the Application Delivery Foundation for z/OS&reg; common component server
-  - [ADFzCC][link-adfz-customize] must use the [AT-TLS][link-adfz-attls] feature when configuring TLS support
+  the Application Delivery Foundation for z/OS&reg; Common Component (ADFzCC) server
+  - Assumes knowledge of how to [install][link-adfz-install] and [configure][link-adfz-config] the ADFz Common Component server
+  - [ADFz Common Component][link-adfz-customize] must use the [AT-TLS][link-adfz-attls] feature when configuring TLS support
 
 ## VS Code extension requirements
 
@@ -35,7 +34,7 @@ as well as other extensions available for [ADFz][link-ext-pack] customers.**
 
 - [IBM Fault Analyzer for z/OS&reg;][link-fa] `16.1.0`+
 - [IBM Application Delivery Foundation for z/OS&reg; Common Components][link-adfz-docs] `1.10.0`+
-  - There must be at least one ADFz common component server configured and deployed
+  - There must be at least one ADFz Common Component server configured and deployed
     on the host that you want to work with
 
 Note that while `15.1.x` host builds might work, they are **not** officially supported.
@@ -73,14 +72,14 @@ Itemized below are the features supported and not supported in broad terms.
   - Event Detail hyperlinks to jump to a specific event
   - Source code hyperlinks to open a source file at a specific line
 
-### ADFz Common Component server connections
+### ADFz Common Component connections
 
-- Associate an ADFzCC port with a Zowe Profile
-- Remove the association between an ADFzCC port and a Zowe profile
+- Associate an ADFz Common Component connection with a Zowe Profile
+- Remove the association between an ADFz Common Component connection and a Zowe profile
 
 ## Unsupported features
 
-- Trust manager for certificates used when connecting to the ADFzCC server
+- Trust manager for certificates used when connecting to the ADFz Common Component server
 
 ### History files
 
@@ -114,21 +113,21 @@ Itemized below are the features supported and not supported in broad terms.
 
 # Getting started
 
-## Specifying the ADFzCC connection port
+## Configuring the ADFz Common Component connection
 
 Before you begin, all the above requirements must be fulfilled.
 
 1. Open VS Code
 2. If necessary, create at least one Zowe profile: team configuration profile or v1 profile (deprecated)
 3. Switch to the Zowe Explorer toolwindow
-4. Right-click on the profile that matches the z/OS subsystem your ADFz common component server is running on
-5. From the **Application Delivery Foundation for z/OS** menu item, choose **Configure port**
-6. Enter the port that your ADFz common component server is configured to use
+4. Right-click on the profile that matches the z/OS subsystem your ADFz Common Component server is running on
+5. From the **Application Delivery Foundation for z/OS** menu item, choose **Configure connection**
+6. Enter the connection information for the ADFz Common Component server
 
 You are now ready to use the IBM Fault Analyzer VS Code extension.
 
-NOTE: if you access a Fault Analyzer feature before configuring the port number,
-you will be prompted to specify the port the first time only.
+NOTE: if you access a Fault Analyzer feature before configuring the ADFz Common Component connection,
+you will be prompted to specify the required information the first time only.
 
 ## The Fault Analyzer tree
 
@@ -136,7 +135,7 @@ When the Zowe Explorer toolwindow is selected in VS Code, the toolwindow has thr
 **Data Sets**, **Unix System Services**, and **Jobs**.
 
 The Fault Analyzer extension adds a **Fault Analyzer** tree view as well to manage the history files that have been added.  
-When an ADFz common component server port is associated with a profile, that connection will be displayed in the
+When an ADFz Common Component connection is associated with a profile, that connection will be displayed in the
 **Fault Analyzer** tree view.
 
 ![Fault Analyzer tree](./docs/images/fa-tree.gif)
@@ -145,7 +144,7 @@ When an ADFz common component server port is associated with a profile, that con
 
 #### Connection nodes
 
-There will be one root node representing each host and port of an ADFz common component server connection.
+There will be one root node representing each host and port of an ADFz Common Component connection.
 
 #### Browse History Files nodes
 
@@ -169,8 +168,8 @@ History Files can also be added from the Zowe Explorer **Data Sets** tree:
 2. Select an existing filter or create a new filter that will show the history file that you want to open and add to the
    **Fault Analyzer** tree
 3. From the context menu, select **Fault Analyzer** > **Add history file**
-4. If an ADFz common component server port has not been specified for this profile, the port will be prompted for
-   and a new ADFz connection will be created in the **Fault Analyzer** tree
+4. If an ADFz Common Component connection has not been configured for this profile, the required information
+   will be prompted for and a new connection will be created in the **Fault Analyzer** tree
 5. The history file will be added to the **Fault Analyzer** tree if it does not already exist in the tree, and will be
    opened in a new tab
 
@@ -226,7 +225,7 @@ The Fault Analyzer extension adds new commands to the VS Code Command Palette.
 Adds a history file to the **Fault Analyzer** tree in the Zowe Explorer toolwindow.  
 You will be prompted for:
 
-- An ADFz common component server connection if there is more than one connection defined
+- A Zowe profile, if there is more than one defined, with an associated ADFz Common Component connection
 - A data set name for the history file you want to open and add to the **Fault Analyzer** tree
 
 ![Add history file from command palette](./docs/images/add-hist-cp.gif)
@@ -236,7 +235,7 @@ You will be prompted for:
 Performs reanalysis on a fault report and opens that report.  
 You will be prompted for:
 
-- An ADFz common component server connection if there is more than one connection defined
+- A Zowe profile, if there is more than one defined, with an associated ADFz Common Component connection
 - The data set name for the history file containing the fault entry you want to reanalyze and open
 - The fault entry ID for the report you want to reanalyze and open
 
