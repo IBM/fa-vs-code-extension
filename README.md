@@ -157,8 +157,8 @@ These are the parent nodes of any history file that have been added for the conn
 
 These are nodes representing a history file that has already been added.
 
-- The **Open history file** inline button (or context menu item) opens the history file or reveals it if already open
-- The **Remove history file** inline button (or context menu item) removes the history file from the **Fault Analyzer** tree
+- The **Open History File** inline button (or context menu item) opens the history file or reveals it if already open
+- The **Remove History File** inline button (or context menu item) removes the history file from the **Fault Analyzer** tree
 
 ## Adding history files from the Zowe Explorer Data Sets tree
 
@@ -192,7 +192,7 @@ you will be able to view the fault report in multiple ways.
 ### From the Jobs tree node
 
 1. Right-click on the job that completed with an ABEND
-2. Select **Fault Analyzer** > **Open fault report**
+2. Select **Fault Analyzer** > **Open Fault Report**
 
    NOTE: if there is more than one ABEND in the job, you will be prompted
    to select which fault report you want to open
@@ -212,7 +212,7 @@ you will be able to view the fault report in multiple ways.
 
 1. Expand the tree node for the job that completed with an ABEND
 2. Click on the **JES2:JESMSGLG** output data set to open it
-3. Open the editor context menu, and select **Open fault report**
+3. Open the editor context menu, and select **Open Fault Report**
 
 ![Open report from JESMSGLG context menu](./docs/images/open-fr-context.gif)
 
