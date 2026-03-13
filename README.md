@@ -20,8 +20,8 @@ as well as other extensions available for [ADFz][link-ext-pack] customers.**
 
 ## VS Code extension requirements
 
-- [VS Code][link-vscode] `1.90.0`+
-- [Zowe Explorer][link-zowe] `3.1.0`+
+- [VS Code][link-vscode] `1.101.0`+
+- [Zowe Explorer][link-zowe] `3.2.0`+
   - Assumes that the user has knowledge of the Zowe Explorer extension before using the IBM Fault Analyzer extension
 
 ## Optional VS Code extensions
@@ -55,6 +55,8 @@ Itemized below are the features supported and not supported in broad terms.
 ### History files
 
 - Open history files in a separate view
+- Customize visible columns in the history files view
+- Filter visible fault reports using individual column filters
 - Add history files to the Fault Analyzer tree view:
   - From the Zowe Data Sets tree view
   - From the Fault Analyzer tree view
@@ -85,8 +87,7 @@ Itemized below are the features supported and not supported in broad terms.
 
 - Add default and recent history files
 - Copy/Rename/Remove fault entries from the history file
-- Filter fault entries
-- Choose column ordering and visibility
+- Choose column ordering
 - View fault entry properties
 
 ### Fault reports
@@ -97,7 +98,6 @@ Itemized below are the features supported and not supported in broad terms.
   - Minidump
 - Hyperlinks:
   - Lookup view links for viewing ABEND explanations
-  - Data set links
   - Memory links jumping to minidump
   - CICS links
 
@@ -111,9 +111,9 @@ Itemized below are the features supported and not supported in broad terms.
 
 - Manage and display charts
 
-# Getting started
+## Getting started
 
-## Configuring the ADFz Common Component connection
+### Configuring the ADFz Common Component connection
 
 Before you begin, all the above requirements must be fulfilled.
 
@@ -129,7 +129,7 @@ You are now ready to use the IBM Fault Analyzer VS Code extension.
 NOTE: if you access a Fault Analyzer feature before configuring the ADFz Common Component connection,
 you will be prompted to specify the required information the first time only.
 
-## The Fault Analyzer tree
+### The Fault Analyzer tree
 
 When the Zowe Explorer toolwindow is selected in VS Code, the toolwindow has three tree views by default:
 **Data Sets**, **Unix System Services**, and **Jobs**.
@@ -160,7 +160,7 @@ These are nodes representing a history file that has already been added.
 - The **Open History File** inline button (or context menu item) opens the history file or reveals it if already open
 - The **Remove History File** inline button (or context menu item) removes the history file from the **Fault Analyzer** tree
 
-## Adding history files from the Zowe Explorer Data Sets tree
+### Adding history files from the Zowe Explorer Data Sets tree
 
 History Files can also be added from the Zowe Explorer **Data Sets** tree:
 
@@ -175,7 +175,7 @@ History Files can also be added from the Zowe Explorer **Data Sets** tree:
 
 ![Add history file from Data Sets view](./docs/images/add-hist-from-dsv.gif)
 
-## Viewing fault reports from a history file
+### Viewing fault reports from a history file
 
 Once a history file has been added to the Fault Analyzer tree, it can be displayed by clicking on it in the tree.  
 Once the history file is displayed, you can open a fault report by double-clicking on a fault entry row.
@@ -184,12 +184,12 @@ An additional path to achieve the same result is to open the context menu over a
 
 ![Open report from history file](./docs/images/open-fr-from-hf.gif)
 
-## Viewing fault reports from the Zowe Explorer Jobs tree
+### Viewing fault reports from the Zowe Explorer Jobs tree
 
 When jobs that have generated one or more ABEND are viewed from the Zowe Explorer **Jobs** tree,
 you will be able to view the fault report in multiple ways.
 
-### From the Jobs tree node
+#### From the Jobs tree node
 
 1. Right-click on the job that completed with an ABEND
 2. Select **Fault Analyzer** > **Open Fault Report**
@@ -199,7 +199,7 @@ you will be able to view the fault report in multiple ways.
 
 ![Open report from Jobs tree node](./docs/images/open-fr-job.gif)
 
-### From a job JESMSGLG output data set (hyperlinks)
+#### From a job JESMSGLG output data set (hyperlinks)
 
 1. Expand the tree node for the job that completed with an ABEND
 2. Click on the **JES2:JESMSGLG** output data set to open it
@@ -208,7 +208,7 @@ you will be able to view the fault report in multiple ways.
 
 ![Open report from JESMSGLG hyperlinks](./docs/images/open-fr-link.gif)
 
-### From a job JESMSGLG output data set (context menu)
+#### From a job JESMSGLG output data set (context menu)
 
 1. Expand the tree node for the job that completed with an ABEND
 2. Click on the **JES2:JESMSGLG** output data set to open it
@@ -216,11 +216,11 @@ you will be able to view the fault report in multiple ways.
 
 ![Open report from JESMSGLG context menu](./docs/images/open-fr-context.gif)
 
-## Fault Analyzer commands
+### Fault Analyzer commands
 
 The Fault Analyzer extension adds new commands to the VS Code Command Palette.
 
-### Add history file
+#### Add history file
 
 Adds a history file to the **Fault Analyzer** tree in the Zowe Explorer toolwindow.  
 You will be prompted for:
@@ -230,7 +230,7 @@ You will be prompted for:
 
 ![Add history file from command palette](./docs/images/add-hist-cp.gif)
 
-### Open fault report
+#### Open fault report
 
 Performs reanalysis on a fault report and opens that report.  
 You will be prompted for:
@@ -241,7 +241,7 @@ You will be prompted for:
 
 ![Open report from command palette](./docs/images/open-fr-cp.gif)
 
-## Overview of the Fault Report view
+### Overview of the Fault Report view
 
 The Fault Report view is a collection of tabs that enable the user to view different sections of the report.
 
@@ -251,6 +251,26 @@ The **Event Details** section displays event hyperlinks to jump to the definitio
 The layout is similar to the Fault Reports view in the IBM Fault Analyzer Eclipse client.
 
 ![Overview of the Fault Report view](./docs/images/reports.gif)
+
+## Getting Help
+
+To ask questions or report issues related to the installation, configuration,
+or use of this extension, please contact [IBM Support][support].
+
+### Zowe Explorer Issues
+
+Because this extension depends on Zowe Explorer, some issues may originate from
+core Zowe Explorer functionality. Examples include:
+
+- Data Set and USS file browsing
+- Job management and submission
+- Base Zowe Explorer commands and views
+
+Issues specific to Zowe Explorer should be reported to its [issue tracker][zowe-support].
+
+Determining the source of an issue and choosing the appropriate reporting channel is
+generally straightforward: error notifications include the extension name, and log
+entries displayed in the **Output** view are categorized by extension.
 
 [link-vscode]: https://code.visualstudio.com
 [link-zowe]: https://marketplace.visualstudio.com/items?itemName=Zowe.vscode-extension-for-zowe
@@ -264,3 +284,5 @@ The layout is similar to the Fault Reports view in the IBM Fault Analyzer Eclips
 [link-adfz-customize]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/svrauth.html
 [link-adfz-attls]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/attls.html
 [link-ext-pack]: https://marketplace.visualstudio.com/items?itemName=IBM.application-delivery-foundation-for-zos-vscode-extension-pack
+[support]: https://www.ibm.com/mysupport/
+[zowe-support]: https://github.com/zowe/zowe-explorer-vscode/issues
