@@ -1,3 +1,29 @@
+# 16.1.326030310 (release)
+
+- Improved multi-step Command Palette workflows by adding visible step counts and in-place progress
+  indication while performing background validation of user input, avoiding shifting focus from the
+  Command Palette to a progress notification.
+
+### Requirements
+
+- Changed the minimum supported Zowe Explorer version to 3.2.0 to improve compatibility.
+- Raised the minimum supported VS Code version to 1.101.0.
+
+# 16.1.226011417 (release)
+
+- No user-facing changes.  
+  This release focuses on internal refactors to improve and consolidate the extension's quality.
+
+# 16.1.225110416 (release)
+
+### History File
+
+- Added the ability to reset the visible columns to their original configuration.
+- Added filtering support for textual columns.  
+  You can now specify a single text filter to perform a case-insensitive match on each column's content.
+- Improved table rendering performance.  
+  Extremely large history files can now be displayed without any UI lag.
+
 # 16.1.225101614 (release)
 
 ### History File
