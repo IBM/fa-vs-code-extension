@@ -3,9 +3,9 @@
 The IBM Fault Analyzer for z/OS&reg; VS Code extension works in conjunction with the [Zowe Explorer][link-zowe] VS Code extension.
 IBM Fault Analyzer for z/OS&reg; helps developers analyze and fix application and system failures.
 
-When applications abnormally end (ABEND) it is crucial to understand the root-cause.
+When applications abnormally end (ABEND), it is crucial to understand the root-cause.
 IBM Fault Analyzer for z/OS&reg; can discover ABENDs faster, more confidently, and in less time
-by automatically harvesting real-time information of the ABEND and its environment at the time of failure.
+by automatically gathering real-time information of the ABEND and the environment at the time of failure.
 
 **Simplify your installation experience by using newly bundled extension packs that contain IBM Fault Analyzer for z/OS
 as well as other extensions available for [ADFz][link-ext-pack] customers.**
