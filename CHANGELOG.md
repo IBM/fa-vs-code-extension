@@ -1,3 +1,14 @@
+# 16.1.326040713 (release)
+
+- Added support for custom fault entry analysis options via the **IBM Fault Analyzer** > **Analysis Options** setting.
+- Added support for the Fault Report **User** tab to display additional user-provided content.
+- Improved Fault Report usability and readability through UI and interaction enhancements:
+  - Moved section folding controls into a dedicated column to improve navigation.
+  - Simplified the layout by removing unnecessary collapsible sections and heading separators.
+  - Added highlighting for headings and errors.
+  - Added a loading spinner to clarify the report loading state.
+  - Enhanced text selection behavior by trimming whitespace where possible.
+
 # 16.1.326030310 (release)
 
 - Improved multi-step Command Palette workflows by adding visible step counts and in-place progress
