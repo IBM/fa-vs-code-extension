@@ -1,0 +1,36 @@
+name: 🐞 Bug report
+description: Report a bug or unexpected behavior
+assignees:
+  - lppedd
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Support Notice
+        
+        GitHub Issues are not subject to SLA.  
+        If you require a formal support response or guaranteed timelines, you may need to open a case via [IBM Support](https://www.ibm.com/mysupport/).
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a clear description and possible reproduction steps of the bug or unexpected behavior.
+      placeholder: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide details about your setup to help us reproduce the issue.
+      value: |
+        - Extension version:
+        - VS Code version:
+        - OS:
+    validations:
+      required: true

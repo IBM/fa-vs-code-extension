@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: IBM Ideas
+    url: https://ideas.ibm.com/
+    about: Submit feature or enhancement requests through the formal Idea process
+  - name: IBM Support
+    url: https://www.ibm.com/mysupport/
+    about: Report bugs or unexpected behaviors through the IBM Support channel

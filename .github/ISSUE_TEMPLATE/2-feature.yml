@@ -1,0 +1,24 @@
+name: 🚀 Feature request
+description: Suggest a new feature or enhancement
+assignees:
+  - lppedd
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Support Notice
+        
+        GitHub Issues are not subject to SLA.  
+        If you require formal tracking and voting, you may need to open an Idea at [IBM Ideas](https://ideas.ibm.com/).
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed feature or enhancement
+      description: Describe the feature or enhancement you would like to see, including the problem it solves or the benefit it provides.
+      placeholder: I'd like to have...
+    validations:
+      required: true
