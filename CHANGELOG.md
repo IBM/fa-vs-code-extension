@@ -1,3 +1,12 @@
+# 16.1.326042215 (release)
+
+- Fixed a Fault Report loading error when the `IDIOPTS` option `PrintInactiveCOBOL` is present.
+- Fixed a client-side parsing issue that prevented certain Japanese Fault Reports from opening.
+- Fixed character alignment issues in Japanese Fault Reports by correctly handling IBM-939 shift bytes (SO/SI)
+  during decoding. Rendering may still depend on the font used by the client.
+- Renamed command palette item **Add History File** to **Open History File**.
+- Renamed context menu item **Add History File** to **Open History File**.
+
 # 16.1.326040713 (release)
 
 - Added support for custom fault entry analysis options via the **IBM Fault Analyzer** > **Analysis Options** setting.
