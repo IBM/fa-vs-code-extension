@@ -3,6 +3,7 @@
 <div align="center">
 
 [![GitHub Issues](https://img.shields.io/github/issues/IBM/fa-vs-code-extension?logo=GitHub)][link-fa-vsc-issues]
+[![VS Marketplace](https://vsmarketplacebadges.dev/version-short/IBM.zfaultanalyzer.svg)][link-fa-extension]
 [![IBM ADFz Extension Pack](https://img.shields.io/badge/IBM-ADFz%20Extension%20Pack-blue)][link-ext-pack]
 [![IBM Support](https://img.shields.io/badge/IBM-Support-white)][link-support]
 
@@ -21,6 +22,7 @@ by automatically gathering real-time information of the ABEND and the environmen
 
 ## Table of contents
 
+- [Changelog](#changelog)
 - [General requirements](#general-requirements)
 - [Host requirements](#host-requirements)
 - [VS Code requirements](#vs-code-requirements)
@@ -30,6 +32,10 @@ by automatically gathering real-time information of the ABEND and the environmen
 - [Unsupported features](#unsupported-features)
 - [Getting started](#getting-started)
 - [Getting help](#getting-help)
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md).
 
 ## General requirements
 
@@ -318,6 +324,7 @@ To determine the source of an issue and the appropriate reporting channel, consi
 - Error notifications include the extension name.
 - Log entries displayed in the **Output** view are categorized by extension.
 
+[link-fa-extension]: https://marketplace.visualstudio.com/items?itemName=IBM.zfaultanalyzer
 [link-vscode]: https://code.visualstudio.com
 [link-zowe]: https://marketplace.visualstudio.com/items?itemName=Zowe.vscode-extension-for-zowe
 [link-open-editor]: https://marketplace.visualstudio.com/items?itemName=IBM.zopeneditor
