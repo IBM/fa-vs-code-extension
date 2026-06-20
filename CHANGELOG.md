@@ -1,3 +1,27 @@
+# 16.1.426060911 (release)
+
+- Added **Manage Zowe Profile** and **Configure ADFzCC connection** actions to the context menu
+  of the root connection items in the IBM Fault Analyzer tree, making it easier to access
+  the Zowe profile and its associated ADFzCC connection.
+- 🧪 Added an experimental **Pinned History Files** setting that lets you pin history files
+  for a Zowe profile so they always appear in the IBM Fault Analyzer tree.
+  This is especially useful when distributing base settings to a group of users.
+
+  ```json
+  "zfaultanalyzer.pinnedHistoryFiles": {
+    "profileName": [
+      "HISTORY.FILE.ONE",
+      "HISTORY.FILE.TWO"
+    ]
+  }
+  ```
+
+  This experimental setting supports diagnostics for reporting invalid profiles and history file names,
+  and completion for profile names.
+
+- Removed the **Clear tree storage** Command Palette command.  
+  This command was intended for development/debugging only and is no longer exposed to users.
+
 # 16.1.326042215 (release)
 
 - Fixed a Fault Report loading error when the `IDIOPTS` option `PrintInactiveCOBOL` is present.
