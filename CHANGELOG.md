@@ -1,4 +1,19 @@
-# 16.1.426060911 (release)
+# 16.1.426071615 - July 2026 (release)
+
+- 🗑️ Removed the **Manage Profile** context menu item from the IBM Fault Analyzer tree.  
+  Although it was intended to provide a convenient way to manage Zowe profiles directly from the tree,
+  its integration with Zowe Explorer was not reliable enough in its current state.
+- 🎨 Refreshed the look & feel with updated icons for editor tabs and tree items.
+- 🎉 Added support for reordering history file columns by dragging & dropping them in the **Columns** dropdown menu.
+- 🎉 Added support for creating new history files via the **Create History File** Command Palette wizard.
+- ✨ Redesigned the **Open History File** Command Palette wizard to show the configured
+  default history file, pinned history files, and the 10 most recently used history files.
+- ✨ Redesigned the **Open Fault Report** Command Palette wizard to show all entries
+  from the selected history file, plus the 10 most recently used fault entry IDs.
+
+  Both wizards now validate the selected history file or fault entry before attempting to open it.
+
+# 16.1.426060911 - June 2026 (release)
 
 - Added **Manage Zowe Profile** and **Configure ADFzCC connection** actions to the context menu
   of the root connection items in the IBM Fault Analyzer tree, making it easier to access
@@ -22,7 +37,7 @@
 - Removed the **Clear tree storage** Command Palette command.  
   This command was intended for development/debugging only and is no longer exposed to users.
 
-# 16.1.326042215 (release)
+# 16.1.326042215 - April 2026 (release)
 
 - Fixed a Fault Report loading error when the `IDIOPTS` option `PrintInactiveCOBOL` is present.
 - Fixed a client-side parsing issue that prevented certain Japanese Fault Reports from opening.
@@ -31,7 +46,7 @@
 - Renamed command palette item **Add History File** to **Open History File**.
 - Renamed context menu item **Add History File** to **Open History File**.
 
-# 16.1.326040713 (release)
+# 16.1.326040713 - April 2026 (release)
 
 - Added support for custom fault entry analysis options via the **IBM Fault Analyzer** > **Analysis Options** setting.
 - Added support for the Fault Report **User** tab to display additional user-provided content.
@@ -42,7 +57,7 @@
   - Added a loading spinner to clarify the report loading state.
   - Enhanced text selection behavior by trimming whitespace where possible.
 
-# 16.1.326030310 (release)
+# 16.1.326030310 - March 2026 (release)
 
 - Improved multi-step Command Palette workflows by adding visible step counts and in-place progress
   indication while performing background validation of user input, avoiding shifting focus from the
@@ -53,7 +68,7 @@
 - Changed the minimum supported Zowe Explorer version to 3.2.0 to improve compatibility.
 - Raised the minimum supported VS Code version to 1.101.0.
 
-# 16.1.226011417 (release)
+# 16.1.226011417 - January 2026 (release)
 
 - No user-facing changes.  
   This release focuses on internal refactors to improve and consolidate the extension's quality.
