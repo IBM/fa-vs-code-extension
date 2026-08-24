@@ -1,3 +1,14 @@
+# 16.1.426081911 - August 2026 (release)
+
+- 🎉 Added a new **Refresh** button to the history file view that lets you refresh fault entries
+  without having to close and reopen the history file.
+- 🎉 Added new **Copy** and **Move** buttons to the history file view that let you copy or move
+  fault entries between history files.
+- 🎉 Added a new **Delete** context menu action for fault entries in the history file view.
+- ✨ Improved the **Open Fault Report** Command Palette wizard with a new **Back** button
+  in the title area that lets you return to the previous step without having to restart the workflow.
+- 🛠️ Raised the minimum supported VS Code version to 1.108.0.
+
 # 16.1.426071615 - July 2026 (release)
 
 - 🗑️ Removed the **Manage Profile** context menu item from the IBM Fault Analyzer tree.  
