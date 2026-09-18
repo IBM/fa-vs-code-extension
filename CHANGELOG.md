@@ -1,3 +1,7 @@
+# 16.1.426091513 - September 2026 (release)
+
+- 🎉 Added support for unlocking a locked fault entry when a move or delete operation fails.
+
 # 16.1.426081911 - August 2026 (release)
 
 - 🎉 Added a new **Refresh** button to the history file view that lets you refresh fault entries
