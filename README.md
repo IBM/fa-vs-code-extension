@@ -28,6 +28,7 @@ by automatically gathering real-time information of the ABEND and the environmen
 - [Integration with Zowe Explorer](#integration-with-zowe-explorer)
 - [Configuring the extension](#configuring-the-extension)
 - [Using the extension](#using-the-extension)
+- [Enabling the AI integration](#enabling-the-ai-integration)
 - [Getting help](#getting-help)
 
 ## Changelog
@@ -107,6 +108,10 @@ This is especially useful when distributing base settings to a group of users.
   ]
 }
 ```
+
+### AI integration
+
+See the [Enabling the AI integration](#enabling-the-ai-integration) section for more information.
 
 ## Using the extension
 
@@ -337,6 +342,58 @@ Use the **Reanalyze Fault Entry** editor action to refresh the active report wit
   <small>Overview of the fault report view</small>
 </p>
 
+## Enabling the AI integration
+
+The extension also provides an **experimental** integration with the built-in VS Code Chat experience.
+
+The experimental integration is off by default, and can be enabled by setting `zfaultanalyzer.ai.enabled` to `true`
+and then restarting VS Code. The enabled components include:
+
+- **MCP Server**: provides tools to allow LLMs to interact with history files, fault entries, and fault reports
+  when prompting in a Chat session.
+- **Chat Participant**: provides a `@fault-analyzer` participant for questions about using the extension.
+- **Context Contributors**: provide Chat context items for recently used history files and fault entries,
+  and for the active history-file or fault-report tab.
+
+  **Important**: Context Contributors require VS Code Insiders. See [Injecting Chat context items](#injecting-chat-context-items) for more details.
+
+### Using the Chat Participant
+
+In a Chat session, tag the **IBM Fault Analyzer** Chat Participant with `@fault-analyzer` to ask
+questions about how to use the extension. For example, you may want to know how to open a history file,
+how to find a fault entry, how to navigate a fault report, or how to report unexpected behavior.
+
+The Chat Participant is mostly intended for extension how-to questions at the moment, but it may be
+expanded to other use cases in the future, such as assisting with host-related questions, or being
+able to automate specific UI workflows.
+
+For information about history files, fault entries, or fault reports, prompt directly in Chat as described below.
+
+### Prompting for history files and fault reports
+
+Tagging `@fault-analyzer` is not necessary to retrieve information from history files, fault entries, or fault reports.
+The MCP Server makes tools available to the chat model, which can use them when appropriate.
+
+For example, ask for entries in `HISTORY.FILE.NAME`, or for a summary of the report for `HISTORY.FILE.NAME(FAULTID)`.
+
+If you do not specify a Zowe profile, the tools use the only profile with a configured connection,
+or ask you to select one when several are available.
+
+### Injecting Chat context items
+
+The extension uses the proposed [Contributable Chat Context API][chat-context-api] to provide [Chat context][chat-context]
+in two ways:
+
+- Explicit attachments: select a recently used history file or fault entry via **Add Context...** in the Chat input box.
+- Implicit attachments: the active history file or fault report tab provides a context item automatically.
+
+These context items identify the resource and its Zowe profile. They do not contain the resources themselves, but allow
+the selected chat model to invoke MCP tools to retrieve them when needed.
+
+Because the API is still under development, these features require VS Code Insiders and an Insiders-enabled `.vsix` file.
+Download [VS Code Insiders][vscode-insiders], then download the Insiders-enabled `.vsix` from the [GitHub Releases][github-releases]
+page and manually install it.
+
 ## Getting help
 
 To ask questions or report issues related to the installation, configuration,
@@ -360,6 +417,7 @@ To determine the source of an issue and the appropriate reporting channel, consi
 - Log entries displayed in the **Output** view are categorized by extension.
 
 [vscode]: https://code.visualstudio.com
+[vscode-insiders]: https://code.visualstudio.com/insiders
 [vscode-pack]: https://marketplace.visualstudio.com/items?itemName=IBM.application-delivery-foundation-for-zos-vscode-extension-pack
 [vscode-cc]: https://marketplace.visualstudio.com/items?itemName=IBM.zcommoncomponent
 [vscode-fa]: https://marketplace.visualstudio.com/items?itemName=IBM.zfaultanalyzer
@@ -374,5 +432,8 @@ To determine the source of an issue and the appropriate reporting channel, consi
 [cc-customize]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/svrauth.html
 [cc-attls]: https://help.blueproddoc.com/adfz_common_components/1.10.0/en/attls.html
 [github-issues]: https://github.com/IBM/fa-vs-code-extension/issues
+[github-releases]: https://github.com/IBM/fa-vs-code-extension/releases
 [ibm-support]: https://www.ibm.com/mysupport/
 [zowe-support]: https://github.com/zowe/zowe-explorer-vscode/issues
+[chat-context]: https://code.visualstudio.com/docs/chat/copilot-chat-context
+[chat-context-api]: https://github.com/microsoft/vscode/blob/main/src/vscode-dts/vscode.proposed.chatContextProvider.d.ts
