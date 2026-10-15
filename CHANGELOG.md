@@ -1,3 +1,27 @@
+# 17.1.26101408 - October 2026 (release)
+
+- 🎉 Added a dedicated **IBM Fault Analyzer** activity bar with a **Resources** tree to display
+  added history files, and a **Fault Entry Information** view to contain fault entry properties.
+
+  Selecting a fault entry in a history file now displays its properties, including Lock status,
+  ABEND information, Job and Data Set details. Editing capabilities for User Name, User Title,
+  and Lock Flag are planned for a follow-up update.
+
+  Note that the existing **IBM Fault Analyzer** tree remains available in the Zowe Explorer
+  activity bar for convenience.
+
+- 🎉 Added an experimental AI integration for the built-in VS Code Chat view.
+  Enable it by setting `zfaultanalyzer.ai.enabled` to `true` and restart VS Code.
+
+  This initial integration includes:
+  - **MCP Server** with tools to allow LLMs to interact with history files, fault entries, and fault reports.
+  - **Chat Participant** `@fault-analyzer` for questions about using the IBM Fault Analyzer extension.
+  - **Context Contributors** for attaching recently used history files and fault entries to the Chat session,
+    or automatically including context from the active history file or fault report tab.
+
+    **Important**: Context Contributors require VS Code Insiders and an Insiders-enabled `.vsix` file.
+    See the extension's README for more information.
+
 # 16.1.426091513 - September 2026 (release)
 
 - 🎉 Added support for unlocking a locked fault entry when a move or delete operation fails.
